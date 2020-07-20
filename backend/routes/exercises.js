@@ -25,4 +25,30 @@ router.route('/add').post((request, response) => {
     .catch(error => response.status(400).json(`Error ${error}`))
 });
 
+router.route('/:id').get((request, response) => {
+  Exercise.findById(request.params.id)
+    .then(exercise => response.json(exercise))
+    .catch(error => response.status(400).json(`Error: ${error}`))
+});
+
+router.route('/:id').delete((request, response) => {
+  Exercise.findByIdAndDelete(request.params.id)
+    .then(() => response.json('Exercise deleted.'))
+    .catch(error => response.status(400).json(`Error ${error}`))
+});
+
+router.route('/update/:id').post((request, response) => {
+  Exercise.findById(request.params.id)
+    .then(exercise => {
+      exercise.username = request.body.username;
+      exercise.description = request.body.description;
+      exercise.duration = Number(request.body.duration);
+      exercise.date = Date.parse(request.body.date);
+      exercise.save()
+        .then(() => response.json('Exercise updated!'))
+        .catch(error => response.status(400).json(`Error ${error}`))
+    })
+    .catch(error => response.status(400).json(`Error ${error}`));
+});
+
 module.exports = router;
