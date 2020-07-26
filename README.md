@@ -1,5 +1,11 @@
 This exercise tracker follows the MongoDB tutorial found [here](https://www.mongodb.com/blog/post/building-an-exercise-tracker-mern-tutorial).
 
+- Add confirmation alert when trying to delete an exercise
+- Add cancel button to edit exercise page
+- Add validation for input
+- Add toast component and show feedback to the user
+- Fix navigation after performing certain actions; example: when a user creates an exercise, take them to the exercise list page.
+
 ## `create-react-app` README below:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
