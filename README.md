@@ -1,3 +1,7 @@
+This exercise track follows the MongoDB tutorial found [here](https://www.mongodb.com/blog/post/building-an-exercise-tracker-mern-tutorial).
+
+## `create-react-app` README below:
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
